@@ -55,7 +55,7 @@ class Chatbot:
         self.messages.append(
             Message(
                 role="user",
-                content="I thought it was delicious!"
+                content="<message>I thought it was delicious!</message>"
             )
         )
         self.messages.append(
@@ -66,7 +66,7 @@ class Chatbot:
         self.messages.append(
             Message(
                 role="user",
-                content="Yes please!"
+                content="<message>Yes please!</message>"
             )
         )
         
@@ -113,7 +113,7 @@ Feel free to customize your burgers with additional toppings or seasonings to su
 
     def chat(self, input_text):
         
-        self.messages.append(Message(role="user", content=input_text))
+        self.messages.append(Message(role="user", content="<message>"+input_text+"</message>"))
 
         # main loop: get answer from model, ask user for reply, repeat.
         completion = get_chat_completion(
