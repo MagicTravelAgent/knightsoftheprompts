@@ -3,7 +3,7 @@ from own_helper import Chatbot
 from tkinter import ttk
 
 chat = Chatbot()
-    
+
 root = tk.Tk()
 root.title("Text Processing")
 root.geometry("500x900")
@@ -17,13 +17,11 @@ table.heading("Recommended Recipe", text="Recommended Recipe")
 # Function to update the table with new data
 def update_table(tags):
     if len(tags) == 4:
-        table.delete(*table.get_children())  # Clear existing data
-        
+        # table.delete(*table.get_children())  # Clear existing data        
         sample = tags["sample"]
         enjoyment = tags["enjoyment"]
         recommended_recipe = tags["recommended_recipe"]
         table.insert("", "end", values=(sample, enjoyment, recommended_recipe))
-
 
 output_text_box = tk.Text(root, height=30, width=60)
 output_text_box.pack()
