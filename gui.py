@@ -9,19 +9,21 @@ root.title("Text Processing")
 root.geometry("500x900")
 
 # Creating a Treeview widget for the table
-table = ttk.Treeview(root, columns=("Sample", "Enjoyment", "Recommended Recipe"), show="headings")
+table = ttk.Treeview(root, columns=("Sample", "Enjoyment", "Judgment", "Recommended Recipe"), show="headings")
 table.heading("Sample", text="Sample")
 table.heading("Enjoyment", text="Enjoyment")
+table.heading("Judgment", text="Judgment")
 table.heading("Recommended Recipe", text="Recommended Recipe")
 
 # Function to update the table with new data
 def update_table(tags):
-    if len(tags) == 4:
+    if len(tags) == 5:
         # table.delete(*table.get_children())  # Clear existing data        
         sample = tags["sample"]
         enjoyment = tags["enjoyment"]
+        judgment = tags["judgment"]
         recommended_recipe = tags["recommended_recipe"]
-        table.insert("", "end", values=(sample, enjoyment, recommended_recipe))
+        table.insert("", "end", values=(sample, enjoyment, judgment, recommended_recipe))
 
 output_text_box = tk.Text(root, height=30, width=60)
 output_text_box.pack()

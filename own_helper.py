@@ -62,7 +62,7 @@ class Chatbot:
         self.messages.append(
             Message(
                 role="assistant",
-                content="<sample>truffle mayonaise</sample><enjoyment>delicious</enjoyment><recommended_recipe>truffle aioli burger</recommended_recipe><message>Great! I'm glad you enjoyed it. Would you like a recipe truffle aioli burgers based on this sample?</message>")
+                content="<sample>truffle mayonaise</sample><enjoyment>delicious</enjoyment><judgment>positive</judgment><recommended_recipe>truffle aioli burger</recommended_recipe><message>Great! I'm glad you enjoyed it. Would you like a recipe truffle aioli burgers based on this sample?</message>")
         )
 
         self.messages.append(
