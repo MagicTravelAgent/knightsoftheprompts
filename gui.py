@@ -6,7 +6,7 @@ chat = Chatbot()
 
 root = tk.Tk()
 root.title("Text Processing")
-root.geometry("500x900")
+root.geometry("800x900")
 
 # Creating a Treeview widget for the table
 table = ttk.Treeview(root, columns=("Sample", "Enjoyment", "Judgment", "Recommended Recipe"), show="headings")
