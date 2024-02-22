@@ -6,24 +6,34 @@ chat = Chatbot()
 
 root = tk.Tk()
 root.title("Text Processing")
-root.geometry("800x900")
+root.geometry("1000x900")
 
 # Creating a Treeview widget for the table
-table = ttk.Treeview(root, columns=("Sample", "Enjoyment", "Judgment", "Recommended Recipe"), show="headings")
+table = ttk.Treeview(root, columns=("Sample", "Enjoyment", "Sentiment", "Score", "Recommended Recipe"), show="headings")
 table.heading("Sample", text="Sample")
 table.heading("Enjoyment", text="Enjoyment")
-table.heading("Judgment", text="Judgment")
+table.heading("Sentiment", text="Sentiment")
+table.heading("Score", text="Score")
 table.heading("Recommended Recipe", text="Recommended Recipe")
 
 # Function to update the table with new data
 def update_table(tags):
+    if len(tags) == 6:
+        # table.delete(*table.get_children())  # Clear existing data        
+        sample = tags["sample"]
+        enjoyment = tags["enjoyment"]
+        sentiment = tags["sentiment"]
+        score = tags["score"]
+        recommended_recipe = tags["recommended_recipe"]
+        table.insert("", "end", values=(sample, enjoyment, sentiment, score, recommended_recipe))
     if len(tags) == 5:
         # table.delete(*table.get_children())  # Clear existing data        
         sample = tags["sample"]
         enjoyment = tags["enjoyment"]
-        judgment = tags["judgment"]
-        recommended_recipe = tags["recommended_recipe"]
-        table.insert("", "end", values=(sample, enjoyment, judgment, recommended_recipe))
+        sentiment = tags["sentiment"]
+        score = tags["score"]
+        recommended_recipe = ""
+        table.insert("", "end", values=(sample, enjoyment, sentiment, score, recommended_recipe))
 
 output_text_box = tk.Text(root, height=30, width=60)
 output_text_box.pack()
