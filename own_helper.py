@@ -43,7 +43,7 @@ class Chatbot:
                     f"The text of your messages to the chef you are helping must be captured between the html tags <message> your message </message>."
                     f"If you recommend a recipe before you answer you must put the following information between html tags: <sample>sample name</sample>, <enjoyment>enjoyment level</enjoyment>, <sentiment>sentiment of the enjoyment level</sentiment>, <score>score from 0 to 10 of the enjoyment level</score>, <recommended_recipe>recommended recipe</recommended_recipe>."
                     f"Make sure if you recommend a recipe to include the sample name between the html tags <sample>sample name</sample>"
-                    f"initiate the conversation like this: <message>Hello, I am your sous-chef. What did you think of your truffle mayonaise sample?</message>."
+                    f"initiate the conversation like this: <message>Hello, I am your sous-chef. What did you think of your garlic powder sample?</message>."
                     f"An example conversation is provided below:"
                     f"After reading the example below, start the conversation."
             )
