@@ -26,14 +26,6 @@ def update_table(tags):
         score = tags["score"]
         recommended_recipe = tags["recommended_recipe"]
         table.insert("", "end", values=(sample, enjoyment, sentiment, score, recommended_recipe))
-    if len(tags) == 5:
-        # table.delete(*table.get_children())  # Clear existing data        
-        sample = tags["sample"]
-        enjoyment = tags["enjoyment"]
-        sentiment = tags["sentiment"]
-        score = tags["score"]
-        recommended_recipe = ""
-        table.insert("", "end", values=(sample, enjoyment, sentiment, score, recommended_recipe))
 
 output_text_box = tk.Text(root, height=30, width=60)
 output_text_box.pack()
